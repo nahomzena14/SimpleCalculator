@@ -97,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.period_button:
                 if(!calculatorView.getText().toString().contains(".")) {
-                    double value1 = currentValue +0.0;
-                    calculatorView.setText(value1 + "");
-                    currentValue = value1;
+                    String temp1 = calculatorView.getText().toString()+".0";
+                    String temp2 = temp1.substring(0,temp1.length()-1);
+                    calculatorView.setText(temp2);
+                    currentValue = Double.parseDouble(temp2);
                 }
                 break;
             case R.id.negate_button:
